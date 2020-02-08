@@ -1,0 +1,61 @@
+
+User
+    auth
+
+Message
+    blob
+    date
+    space
+    from: User
+
+Space
+    id
+    name
+    members: User[]
+
+Notifications
+    online/offline
+
+
+
+
+
+sign every message you post
+parse messages for mentions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+register a space
+only users with tokens can join
+
+
+
+
+
+what's the most important thing ?
+
+speed
+indexing
+notifications
+    if(!online) push notification
+
+
+
+
+
+getSpaces
+getMessages
+getNotifications

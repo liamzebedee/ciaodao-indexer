@@ -1,0 +1,32 @@
+{
+   "name": "MyProject",
+   "version": "0.0.1",
+   "description": "Awesome project developed with TypeORM.",
+   "scripts": {
+      "start": "PORT=3001 ETH_RPC_URL=https://mainnet.infura.io/v3/3049535d150e49729f54f6f8bef40a1b ts-node --no-deprecation src/index.ts",
+      "copy-contracts": "cp ../contracts/build/contracts/*.json src/ethereum/artifacts",
+      "test": "jest"
+   },
+   "devDependencies": {
+      "@types/node": "^8.0.29",
+      "jest": "^25.1.0",
+      "ts-node": "3.3.0",
+      "typescript": "3.3.3333"
+   },
+   "dependencies": {
+      "3box": "file:../frontend/node_modules/3box",
+      "cors": "^2.8.5",
+      "did-jwt": "^4.0.0",
+      "express": "^4.17.1",
+      "express-winston": "^4.0.2",
+      "identity-wallet": "^1.1.0",
+      "morgan": "^1.9.1",
+      "reflect-metadata": "^0.1.10",
+      "request-promise": "^4.2.5",
+      "request-promise-native": "^1.0.8",
+      "sqlite3": "^4.0.3",
+      "typeorm": "0.2.22",
+      "web3": "^1.2.5-rc.0",
+      "winston": "^3.2.1"
+   }
+}
