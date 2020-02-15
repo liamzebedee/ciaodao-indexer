@@ -6,7 +6,7 @@
          "esnext"
       ],
       "strict": false,
-      "target": "es5",
+      "target": "es2018",
       "module": "commonjs",
       "moduleResolution": "node",
       "importHelpers": true,

@@ -1,5 +1,6 @@
-import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToMany, JoinTable} from "typeorm";
 import { Message } from "./Message";
+import { User } from './User';
 
 
 @Entity()
@@ -16,6 +17,7 @@ export class Space {
     @OneToMany(type => Message, x => x.space)
     messages: Message[];
 
-    // members
-    // count distinct member in messages
+    @ManyToMany(type => User, x => x.joinedSpaces)
+    @JoinTable()
+    members: User[];
 }

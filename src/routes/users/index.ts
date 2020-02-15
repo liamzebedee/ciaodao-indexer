@@ -42,7 +42,7 @@ router.post('/authenticate', async (req, res) => {
         .getRepository(User)
     
     let user = await userRepo
-        .findOneOrFail(did, { relations: ["addresses"] })
+        .findOne(did, { relations: ["addresses"] })
 
     if(user) {
         // idk.
@@ -50,7 +50,8 @@ router.post('/authenticate', async (req, res) => {
         // Upsert.
         user = userRepo
             .create({
-                did
+                did,
+                addresses: []
             });
         
         await userRepo.save(user)

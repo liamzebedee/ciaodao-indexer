@@ -43,6 +43,9 @@ async function run() {
 
   initializeEthereum().then(x => {
     console.log(`Initialized Ethereum contracts`)
+
+    // index created spaces.
+    
   })
 
   // Turn on that server!

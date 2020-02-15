@@ -1,8 +1,15 @@
 const didJWT = require('did-jwt')
 
 export function authMiddleware(req, res, next) {
+    let jwt
+    if (req.method == "GET") {
+        // TODO this is probably horrendously insecure.
+        jwt = JSON.parse(req.headers.authorization)
+    } else {
+        jwt = req.body.jwt
+    }
+
     // check message is signed.
-    const jwt = req.body.jwt
     const claim = didJWT.decodeJWT(jwt, { auth: true })
     const body = claim.payload.message
     const userDid = claim.payload.iss

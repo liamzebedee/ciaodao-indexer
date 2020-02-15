@@ -18,5 +18,5 @@ export class Message {
     space: Space;
 
     @ManyToOne(type => User, x => x.messages)
-    creator: User
+    author: User
 }

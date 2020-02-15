@@ -18,12 +18,19 @@ export class ContractWrappers {
         this.web3 = web3
         this.networkId = networkId
     }
-
-    contract(name) {
+    
+    getDeployedContract(name) {
         let json = require(`./artifacts/${name}.json`)
         // find deployment
         const addr = json.networks[this.networkId].address
-        let contract = web3.eth.Contract(json, addr)
+        let contract = new web3.eth.Contract(json.abi, addr)
+        return contract
+    }
+
+    getContractAtAddress(name, address) {
+        let json = require(`./artifacts/${name}.json`)
+        // find deployment
+        let contract = new web3.eth.Contract(json.abi, address)
         return contract
     }
 }
